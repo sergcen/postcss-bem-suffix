@@ -1,5 +1,6 @@
 'use strict';
-var postcss = require('postcss');
+const postcss = require('postcss');
+const replacer = require('./replacer');
 
 module.exports = postcss.plugin('postcss-bem-suffix', bemSuffix);
 
@@ -16,13 +17,7 @@ function bemSuffix({ suffix, blocks }) {
             return selector;
         }
 
-        const [before, classes] = selector.split('.');
-
-        const classesWithSuffix = classes.map(function(className){
-            return replacer(className, blocks, suffix);
-        });
-
-        return [before, ...classesWithSuffix].join('.');
+        return replacer(selector, blocks, suffix);
       });
     });
   };

@@ -1,6 +1,6 @@
 {
     "name": "postcss-bem-suffix",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -8,8 +8,12 @@
     },
     "author": "",
     "license": "ISC",
+    "peerDependencies": {
+        "postcss": "^8.0.0"
+    },
     "dependencies": {
-        "jest": "^26.6.1"
+        "jest": "^26.6.1",
+        "postcss": "^8.1.4"
     },
     "prettier": {
         "tabWidth": 4,

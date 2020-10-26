@@ -1,10 +1,3 @@
-
-// 'Button' === true
-// 'Button ' === true
-// 'Button2' === true
-// 'Button2 .Exam' === true
-// 'ButtonExam' === false
-// 'Button2Variant' === false
 const makeRegExpStr = s => new RegExp(`(\\.)(${s})(([-_]\\w+)|\\s|$)`, 'g');
 
 const replacer = (selector, blocks, suffix) => {
