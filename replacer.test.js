@@ -23,4 +23,8 @@ describe('replacer', () => {
     it('base prefix', () => {
         expect(replacer('.Button', blocks, { prefix: 'prefix' })).toBe('.prefix-Button');
     });
+
+    it('attributes and pseudo', () => {
+        expect(replacer('.Button[ab] .Select::before', blocks, { prefix: 'prefix' })).toBe('.prefix-Button[ab] .prefix-Select::before');
+    });
 });

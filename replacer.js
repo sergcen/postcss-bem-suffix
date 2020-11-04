@@ -1,4 +1,4 @@
-const makeRegExpStr = (s) => new RegExp(`(\\.)(${s})(([-_]\\w+)|\\s|$)`, 'g');
+const makeRegExpStr = (s) => new RegExp(`(\\.)(${s})(([-_]\\w+)|\\W|$)`, 'g');
 
 const replacer = (selector, blocks, { suffix = '', prefix = '' }) => {
     const regExps = blocks.map((block) => makeRegExpStr(block));
