@@ -4,7 +4,7 @@ const replacer = require('./replacer');
 
 module.exports = postcss.plugin('postcss-bem-suffix', bemSuffix);
 
-function bemSuffix({ suffix, blocks }) {
+function bemSuffix({ suffix, prefix, blocks }) {
   return function(root) {
 
     root.walkRules(function (rule) {
@@ -17,7 +17,7 @@ function bemSuffix({ suffix, blocks }) {
             return selector;
         }
 
-        return replacer(selector, blocks, suffix);
+        return replacer(selector, blocks, { suffix, prefix });
       });
     });
   };
