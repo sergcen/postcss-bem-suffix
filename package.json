@@ -1,6 +1,6 @@
 {
     "name": "postcss-bem-suffix",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "postcss plugin: add suffix to BEM block",
     "main": "index.js",
     "files": [
