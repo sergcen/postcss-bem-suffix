@@ -1,7 +1,7 @@
 const { it, describe } = require('@jest/globals');
 const replacer = require('./replacer');
 
-const blocks = ['Button', 'Select', 'Divider', 'Popup2'];
+const blocks = ['Button', 'Button2', 'Select', 'Divider', 'Popup2', 'Text'];
 
 describe('replacer', () => {
     it('base', () => {
@@ -11,6 +11,14 @@ describe('replacer', () => {
     });
 
     it('element', () => {
+        expect(
+            replacer('.Button-Text', blocks, {
+                suffix: 'suffix',
+            })
+        ).toBe('.Button-suffix-Text');
+    });
+
+    it('element extended', () => {
         expect(
             replacer('.Button-Text .Select .Other', blocks, {
                 suffix: 'suffix',
@@ -34,6 +42,14 @@ describe('replacer', () => {
         expect(replacer('some.Button', blocks, { prefix: 'prefix' })).toBe(
             'some.prefix-Button'
         );
+    });
+
+    it('element as block', () => {
+        expect(
+            replacer('.Button2-Text ', blocks, {
+                prefix: 'prefix',
+            })
+        ).toBe('.prefix-Button2-Text ');
     });
 
     it('attributes and pseudo', () => {
