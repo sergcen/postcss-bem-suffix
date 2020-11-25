@@ -14,9 +14,9 @@
     "peerDependencies": {
         "postcss": "^8.0.0"
     },
-    "dependencies": {
+    "devDependencies": {
         "jest": "^26.6.1",
-        "postcss": "^8.1.4"
+        "postcss": "^8.1.10"
     },
     "prettier": {
         "tabWidth": 4,
